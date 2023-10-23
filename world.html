@@ -23,17 +23,24 @@
     zoom: 3, // ズームレベル
     pitch: 45, // 傾き
     bearing: 90
-    })
-    
-    var popup = new maplibregl.Popup({
-      offset: 25, // ポップアップの位置
-      closeButton: false, // 閉じるボタンの表示
-      }).setText('テスト');
+    });
 
     
-    var marker = new maplibregl.Marker()
-      .setLngLat([139.8136911, 35.709058])
-      .setPopup(popup)
+    var beijing = new maplibregl.Marker()
+      .setLngLat([116.23, 39.54])
+      .setPopup( new maplibregl.Popup({ offset: 25, closeButton: false }).setText('Beijing') )
+      .addTo(map);
+
+    
+    var gwadar = new maplibregl.Marker()
+      .setLngLat([62.19, 25.07])
+      .setPopup( new maplibregl.Popup({ offset: 25, closeButton: false }).setText('Gwadar') )
+      .addTo(map);
+
+    
+    var doraleh = new maplibregl.Marker()
+      .setLngLat([43.095, 11.590])
+      .setPopup( new maplibregl.Popup({ offset: 25, closeButton: false }).setText('Doraleh') )
       .addTo(map);
 
   </script>
