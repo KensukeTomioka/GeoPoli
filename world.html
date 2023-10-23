@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>サンプル</title>
+  <meta name="description" content="サンプルです">
+  <link href="style.css" rel="stylesheet">
+  <!-- MapLibre -->
+  <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+  <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+  <style>
+    html, body{ height: 100%; }
+    #map{ height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var map =  new maplibregl.Map({
+    container: 'map',
+    style: 'https://tile.openstreetmap.jp/styles/osm-bright-ja/style.json', // 地図のスタイル
+    center: [139.8108103, 35.7100069], // 中心座標
+    zoom: 16, // ズームレベル
+    pitch: 0 // 傾き
+    })
+    
+    var popup = new maplibregl.Popup({
+      offset: 25, // ポップアップの位置
+      closeButton: false, // 閉じるボタンの表示
+      }).setText('テスト');
+
+    
+    var marker = new maplibregl.Marker()
+      .setLngLat([139.8136911, 35.709058])
+      .setPopup(popup)
+      .addTo(map);
+
+  </script>
+</body>
+</html>
