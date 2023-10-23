@@ -10,7 +10,7 @@
   <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
   <style>
     html, body{ height: 100%; }
-    #map{ height: 85%; }
+    #map{ height: 85%;　width: 85%; }
   </style>
 </head>
 <body>
@@ -30,6 +30,14 @@
       .setLngLat([116.23, 39.54])
       .setPopup( new maplibregl.Popup({ offset: 25, closeButton: false }).setText('Beijing') )
       .addTo(map);
+
+    var woody = new maplibregl.Marker()
+      .setLngLat([112.2039, 16.500])
+      .setPopup( new maplibregl.Popup({ offset: 25, closeButton: false }).setText('Woody Island') )
+      .addTo(map);
+
+
+    
 
     
     var gwadar = new maplibregl.Marker()
